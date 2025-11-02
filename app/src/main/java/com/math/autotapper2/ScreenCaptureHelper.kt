@@ -12,14 +12,18 @@ import android.media.projection.MediaProjection
 import android.media.projection.MediaProjectionManager
 import android.util.DisplayMetrics
 import android.view.WindowManager
+import androidx.core.content.ContextCompat
 
 class ScreenCaptureHelper(private val activity: Activity) {
 
     private var mediaProjection: MediaProjection? = null
     private var imageReader: ImageReader? = null
     private var virtualDisplay: VirtualDisplay? = null
+    private var serviceStarted = false
 
     fun requestCaptureIntent(): Intent {
+        // ابدأ الـFGS قبل طلب الإذن (مطلوب في Android 14)
+        startFgService()
         val mpm = activity.getSystemService(Context.MEDIA_PROJECTION_SERVICE) as MediaProjectionManager
         return mpm.createScreenCaptureIntent()
     }
@@ -59,8 +63,28 @@ class ScreenCaptureHelper(private val activity: Activity) {
         val tmp = Bitmap.createBitmap(rowStride / pixelStride, h, Bitmap.Config.ARGB_8888)
         tmp.copyPixelsFromBuffer(buffer)
         img.close()
-        // قصّ للصورة الفعلية بعرض الشاشة
         val bmp = Bitmap.createBitmap(tmp, 0, 0, w, h)
         callback(bmp)
+    }
+
+    fun stop() {
+        virtualDisplay?.release(); virtualDisplay = null
+        imageReader?.close(); imageReader = null
+        mediaProjection?.stop(); mediaProjection = null
+        stopFgService()
+    }
+
+    private fun startFgService() {
+        if (!serviceStarted) {
+            ContextCompat.startForegroundService(activity, Intent(activity, MediaProjectionFgService::class.java))
+            serviceStarted = true
+        }
+    }
+
+    private fun stopFgService() {
+        if (serviceStarted) {
+            activity.stopService(Intent(activity, MediaProjectionFgService::class.java))
+            serviceStarted = false
+        }
     }
 }
