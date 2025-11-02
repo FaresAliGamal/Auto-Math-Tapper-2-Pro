@@ -1,0 +1,27 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="16dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Upload each symbol image (transparent PNG)" android:textStyle="bold" android:textSize="16sp"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:layout_marginTop="12dp">
+<Button android:id="@+id/btn_0" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 0" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 1" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 2" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 3" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 4" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_5" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 5" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_6" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 6" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_7" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 7" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_8" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 8" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_9" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload 9" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_plus" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload +" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_minus" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload -" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_x" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload x" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_divide" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload ÷" android:layout_marginTop="8dp"/>
+<Button android:id="@+id/btn_equal" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Upload =" android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
