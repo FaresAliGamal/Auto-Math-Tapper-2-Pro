@@ -16,7 +16,10 @@
 
         <!-- خدمة الـForeground لالتقاط الشاشة -->
         <service
+        <service
             android:name=".MediaProjectionFgService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
             android:exported="false" />
 
         <!-- الأنشطة -->
