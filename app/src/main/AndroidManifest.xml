@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- أذونات لازمة -->
+    <!-- Permissions -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION"/>
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
@@ -14,15 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AutoMathTapper2">
 
-        <!-- خدمة الـForeground لالتقاط الشاشة -->
-        <service
+        <!-- Foreground service for MediaProjection (Android 14) -->
         <service
             android:name=".MediaProjectionFgService"
             android:exported="false"
             android:foregroundServiceType="mediaProjection" />
-            android:exported="false" />
 
-        <!-- الأنشطة -->
+        <!-- Activities -->
         <activity android:name=".SymbolUploaderActivity" android:exported="false" />
         <activity android:name=".SymbolTestActivity" android:exported="false" />
         <activity android:name=".PickRoiActivity" android:exported="false" />
@@ -34,7 +32,7 @@
             </intent-filter>
         </activity>
 
-        <!-- خدمة الـAccessibility للضغط التلقائي -->
+        <!-- Accessibility service for auto tapping -->
         <service
             android:name=".AutoTapService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
