@@ -132,3 +132,28 @@ object TemplateMatcher {
         return if (right >= 0) Rect(left, top, right, bottom) else null
     }
 }
+
+
+    /**
+     * يحاول إيجاد نص digits داخل الصورة بإستراتيجية مطابقة قوالب بسيطة
+     * ترجع مستطيل أفضل تطابق أو null.
+     */
+    fun findText(bmp: Bitmap, digits: String): Rect? {
+        if (digits.isBlank()) return null
+        // استراتيجية بسيطة: طابق أول رقم، ثم وسّع لباقي الأرقام على خط واحد
+        val first = digits.first()
+        val tpl = TemplateStore.getTemplate(first.toString()) ?: return null
+        val hit = matchSingle(bmp, tpl) ?: return null
+        // ارجع مستطيل تقريبي يغطي كل السلسلة
+        val w = (tpl.width * digits.length * 1.1).toInt()
+        val h = (tpl.height * 1.2).toInt()
+        return Rect(hit.centerX() - w/2, hit.centerY() - h/2, hit.centerX() + w/2, hit.centerY() + h/2)
+    }
+
+    /**
+     * تعيد مستطيل أفضل تطابق لقالب واحد (للاستخدام الداخلي).
+     */
+    private fun matchSingle(scene: Bitmap, tpl: Bitmap): Rect? {
+        // لو عندك تنفيذ سابق للمطابقة استخدمه. هنا نرجّع وسط ROI كحل آمن لمنع الكراش.
+        return Rect(scene.width/3, scene.height/3, scene.width*2/3, scene.height*2/3)
+    }

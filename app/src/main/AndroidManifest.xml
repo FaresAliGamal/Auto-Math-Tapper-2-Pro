@@ -25,6 +25,7 @@
         <!-- Activities -->
         <activity android:name=".SymbolUploaderActivity" android:exported="false" />
         <activity android:name=".SymbolTestActivity" android:exported="false" />
+        <activity android:name=".RoiOverlayActivity" android:exported="false" android:theme="@style/Theme.AutoMathTapper2" />
         <activity android:name=".PickRoiActivity" android:exported="false" />
 
         <activity android:name=".MainActivity" android:exported="true">

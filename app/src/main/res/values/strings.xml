@@ -12,3 +12,5 @@
     <string name="cancel">Cancel</string>
     <string name="request_capture">Request Capture</string>
 </resources>
+    <string name="start_live">START LIVE</string>
+    <string name="stop_live">STOP LIVE</string>

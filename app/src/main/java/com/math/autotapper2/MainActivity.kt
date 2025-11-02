@@ -11,8 +11,24 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+import android.content.Intent
+import android.app.Activity
+import android.os.Build
+import androidx.activity.result.contract.ActivityResultContracts
+
 
 class MainActivity : AppCompatActivity() {
+    private val mediaProjection = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { res ->
+        if (res.resultCode == Activity.RESULT_OK && res.data != null) {
+            val it = Intent(this, LiveAnalyzeService::class.java)
+                .putExtra(LiveAnalyzeService.EXTRA_RESULT_CODE, res.resultCode)
+                .putExtra(LiveAnalyzeService.EXTRA_DATA, res.data)
+                .putExtra(LiveAnalyzeService.EXTRA_PERIOD_MS, 500L)
+            if (Build.VERSION.SDK_INT >= 26) startForegroundService(it) else startService(it)
+        }
+    }
+
 
     private lateinit var tvStatus: TextView
     private var roi: Rect = Rect()
@@ -36,7 +52,20 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        findViewById<Button>(R.id.btnStartLive)?.setOnClickListener {
+            val mpm = getSystemService(MEDIA_PROJECTION_SERVICE) as android.media.projection.MediaProjectionManager
+            mediaProjection.launch(mpm.createScreenCaptureIntent())
+        }
+        findViewById<Button>(R.id.btnStopLive)?.setOnClickListener {
+            stopService(Intent(this, LiveAnalyzeService::class.java))
+        }
+        findViewById<Button>(R.id.btnPickRoi)?.setOnClickListener {
+            startActivity(Intent(this, RoiOverlayActivity::class.java))
+        }
+
         capture = ScreenCaptureHelper(this)
 
         tvStatus = findViewById(R.id.tvStatus)

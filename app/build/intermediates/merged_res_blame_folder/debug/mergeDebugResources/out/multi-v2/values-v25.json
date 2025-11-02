@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.math.autotapper2.app-mergeDebugResources-38:/values-v25/values-v25.xml",
+            "map": [
+                {
+                    "source": "/home/codespace/.gradle/caches/8.14.2/transforms/0ba1e0759e1c7f85b3e87bc973fe83cd/transformed/appcompat-1.6.1/res/values-v25/values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
+                    }
+                }
+            ]
+        }
+    ]
+}
