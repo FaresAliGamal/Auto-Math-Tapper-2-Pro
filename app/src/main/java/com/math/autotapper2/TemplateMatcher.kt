@@ -157,3 +157,7 @@ object TemplateMatcher {
         // لو عندك تنفيذ سابق للمطابقة استخدمه. هنا نرجّع وسط ROI كحل آمن لمنع الكراش.
         return Rect(scene.width/3, scene.height/3, scene.width*2/3, scene.height*2/3)
     }
+
+    fun getTemplate(name: String): Bitmap? {
+        return null // placeholder لمنع الخطأ، يمكن استبداله لاحقًا بتحميل فعلي من TemplateStore
+    }

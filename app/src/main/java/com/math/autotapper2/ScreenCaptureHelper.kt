@@ -88,3 +88,11 @@ class ScreenCaptureHelper(private val activity: Activity) {
         }
     }
 }
+
+    fun attach(projection: android.media.projection.MediaProjection) {
+        // Placeholder حتى لا ينهار الكود
+    }
+
+    fun detach() {
+        // Placeholder stop projection
+    }

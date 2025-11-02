@@ -1,22 +1,26 @@
 [
     {
-        "merged": "com.math.autotapper2.app-debug-40:/layout_activity_symbol_test.xml.flat",
-        "source": "com.math.autotapper2.app-main-42:/layout/activity_symbol_test.xml"
+        "merged": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-debug-40:/layout_activity_symbol_uploader.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-main-42:/layout/activity_symbol_uploader.xml"
     },
     {
-        "merged": "com.math.autotapper2.app-debug-40:/layout_activity_main.xml.flat",
-        "source": "com.math.autotapper2.app-main-42:/layout/activity_main.xml"
+        "merged": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-debug-40:/xml_accessibility_service_config.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-main-42:/xml/accessibility_service_config.xml"
     },
     {
-        "merged": "com.math.autotapper2.app-debug-40:/layout_activity_pick_roi.xml.flat",
-        "source": "com.math.autotapper2.app-main-42:/layout/activity_pick_roi.xml"
+        "merged": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-debug-40:/layout_activity_main.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-main-42:/layout/activity_main.xml"
     },
     {
         "merged": "com.math.autotapper2.app-debug-40:/xml_accessibility_service_config.xml.flat",
         "source": "com.math.autotapper2.app-main-42:/xml/accessibility_service_config.xml"
     },
     {
-        "merged": "com.math.autotapper2.app-debug-40:/layout_activity_symbol_uploader.xml.flat",
-        "source": "com.math.autotapper2.app-main-42:/layout/activity_symbol_uploader.xml"
+        "merged": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-debug-40:/layout_activity_symbol_test.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-main-42:/layout/activity_symbol_test.xml"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-debug-40:/layout_activity_pick_roi.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/8.14.2/com.math.autotapper2.app-main-42:/layout/activity_pick_roi.xml"
     }
 ]

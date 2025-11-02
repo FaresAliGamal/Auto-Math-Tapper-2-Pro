@@ -34,8 +34,8 @@ class LiveAnalyzeService : Service() {
     private var periodMs = 600L
     private var projection: MediaProjection? = null
     private lateinit var screen: ScreenCaptureHelper
-    private val matcher = TemplateMatcher()
-    private val math = MathEngine()
+    private val matcher = TemplateMatcher
+    private val math = MathEngine
 
     override fun onBind(intent: Intent?): IBinder? = null
 

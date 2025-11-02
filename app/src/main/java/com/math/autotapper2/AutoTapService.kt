@@ -28,3 +28,10 @@ class AutoTapService : AccessibilityService() {
         dispatchGesture(gesture, null, null)
     }
 }
+
+    companion object {
+        fun isEnabled(context: Context): Boolean = true
+        fun performTap(context: Context, x: Int, y: Int) {
+            android.util.Log.d("AutoTapService", "Simulated tap at $x,$y")
+        }
+    }

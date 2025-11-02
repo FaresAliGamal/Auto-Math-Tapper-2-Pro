@@ -33,15 +33,15 @@ layout activity_main
 layout activity_pick_roi
 layout activity_symbol_test
 layout activity_symbol_uploader
-string accessibility_desc
-string accessibility_summary
 string app_name
 string cancel
 string pick_roi
 string request_capture
 string save
 string start_analyze
+string start_live
 string status_ready
+string stop_live
 string test_symbols
 string upload_symbols
 style Theme.AutoMathTapper2

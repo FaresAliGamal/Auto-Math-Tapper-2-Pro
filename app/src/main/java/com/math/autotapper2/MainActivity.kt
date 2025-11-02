@@ -1,21 +1,13 @@
 
 package com.math.autotapper2
 
-import android.app.Activity
-import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Rect
 import android.os.Bundle
-import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Button
-import android.content.Intent
-import android.app.Activity
 import android.os.Build
-import androidx.activity.result.contract.ActivityResultContracts
 
 
 class MainActivity : AppCompatActivity() {

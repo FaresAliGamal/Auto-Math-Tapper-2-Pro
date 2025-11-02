@@ -62,8 +62,8 @@ class RoiOverlayActivity: AppCompatActivity() {
                 }
                 MotionEvent.ACTION_MOVE -> {
                     if (resizing) {
-                        if (e.x < rect.centerX()) { rect.left = e.x.toInt() } else { rect.right = e.x.toInt() }
-                        if (e.y < rect.centerY()) { rect.top = e.y.toInt() } else { rect.bottom = e.y.toInt() }
+                        if (e.x < rect.centerX()) { rect.set( e.x.toInt() } else {  e.x.toInt() }
+                        if (e.y < rect.centerY()) {  e.y.toInt() } else {  e.y.toInt() }
                         normalize()
                         invalidate()
                     } else if (dragging) {
@@ -91,10 +91,10 @@ class RoiOverlayActivity: AppCompatActivity() {
             clampInside()
         }
         private fun clampInside() {
-            rect.left = rect.left.coerceAtLeast(0)
-            rect.top = rect.top.coerceAtLeast(0)
-            rect.right = rect.right.coerceAtMost(width)
-            rect.bottom = rect.bottom.coerceAtMost(height)
+            rect.set( rect.left.coerceAtLeast(0)
+             rect.top.coerceAtLeast(0)
+             rect.right.coerceAtMost(width)
+             rect.bottom.coerceAtMost(height)
         }
     }
 }
