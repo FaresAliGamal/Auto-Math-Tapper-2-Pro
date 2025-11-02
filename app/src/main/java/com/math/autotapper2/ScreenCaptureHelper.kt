@@ -1,11 +1,10 @@
-
 package com.math.autotapper2
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.ImageFormat
+import android.graphics.PixelFormat
 import android.hardware.display.DisplayManager
 import android.hardware.display.VirtualDisplay
 import android.media.ImageReader
@@ -41,7 +40,7 @@ class ScreenCaptureHelper(private val activity: Activity) {
         val density = metrics.densityDpi
 
         imageReader?.close()
-        imageReader = ImageReader.newInstance(w, h, ImageFormat.RGBA_8888, 2)
+        imageReader = ImageReader.newInstance(w, h, PixelFormat.RGBA_8888, 2)
 
         virtualDisplay?.release()
         virtualDisplay = mediaProjection?.createVirtualDisplay(
@@ -57,9 +56,11 @@ class ScreenCaptureHelper(private val activity: Activity) {
         val plane = img.planes[0]
         val w = img.width; val h = img.height; val rowStride = plane.rowStride; val pixelStride = plane.pixelStride
         val buffer = plane.buffer
-        val bitmap = Bitmap.createBitmap(rowStride / pixelStride, h, Bitmap.Config.ARGB_8888)
-        bitmap.copyPixelsFromBuffer(buffer)
+        val tmp = Bitmap.createBitmap(rowStride / pixelStride, h, Bitmap.Config.ARGB_8888)
+        tmp.copyPixelsFromBuffer(buffer)
         img.close()
-        callback(Bitmap.createBitmap(bitmap, 0, 0, w, h))
+        // قصّ للصورة الفعلية بعرض الشاشة
+        val bmp = Bitmap.createBitmap(tmp, 0, 0, w, h)
+        callback(bmp)
     }
 }
