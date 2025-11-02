@@ -1,68 +1,25 @@
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:orientation="vertical">
 
     <Button
-        android:id="@+id/btnUploadSymbols"
-        android:layout_width="0dp"
+        android:id="@+id/btnStartLive"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/upload_symbols"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        android:text="Start Live Service" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="12dp" />
 
     <Button
-        android:id="@+id/btnPickRoi"
-        android:layout_width="0dp"
+        android:id="@+id/btnStopLive"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/pick_roi"
-        app:layout_constraintTop_toBottomOf="@id/btnUploadSymbols"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:text="Stop Live Service" />
 
-    <Button
-        android:id="@+id/btnRequestCapture"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/request_capture"
-        app:layout_constraintTop_toBottomOf="@id/btnPickRoi"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
-
-    <Button
-        android:id="@+id/btnStartAnalyze"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/start_analyze"
-        app:layout_constraintTop_toBottomOf="@id/btnRequestCapture"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
-
-    <Button
-        android:id="@+id/btnTestSymbols"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/test_symbols"
-        app:layout_constraintTop_toBottomOf="@id/btnStartAnalyze"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
-
-    <TextView
-        android:id="@+id/tvStatus"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/status_ready"
-        android:textSize="16sp"
-        app:layout_constraintTop_toBottomOf="@id/btnTestSymbols"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

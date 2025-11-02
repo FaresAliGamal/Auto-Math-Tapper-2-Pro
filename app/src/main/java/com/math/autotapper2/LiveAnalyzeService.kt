@@ -17,6 +17,8 @@ class LiveAnalyzeService : Service() {
     override fun onCreate() {
         super.onCreate()
         Log.d("LiveAnalyzeService", "Service started")
+        // لو عندك MediaProjection لاحقاً، نقدر نمرّره هنا:
+        capture.attach(null)
     }
 
     override fun onDestroy() {
@@ -25,10 +27,10 @@ class LiveAnalyzeService : Service() {
         Log.d("LiveAnalyzeService", "Service stopped")
     }
 
+    // تُستدعى عندما يكون عندك إطار شاشة/صورة
     fun analyzeFrame(bitmap: Bitmap?) {
         if (bitmap == null) return
-        // placeholder لتحليل الصورة
-        val text = matcher.findText(bitmap) ?: "no text"
+        val text = matcher.findText(bitmap) // من TemplateMatcher (موجود)
         val expression = math.extractExpression(text)
         math.postExpression(expression)
     }

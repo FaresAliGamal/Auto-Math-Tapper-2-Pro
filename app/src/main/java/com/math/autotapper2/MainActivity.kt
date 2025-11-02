@@ -10,15 +10,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // أزرار افتراضية داخل layout
-        val start = findViewById<Button?>(R.id.btnStartLive)
-        val stop = findViewById<Button?>(R.id.btnStopLive)
+        val start = findViewById<Button>(R.id.btnStartLive)
+        val stop = findViewById<Button>(R.id.btnStopLive)
 
-        start?.setOnClickListener {
+        start.setOnClickListener {
             startService(Intent(this, LiveAnalyzeService::class.java))
         }
-
-        stop?.setOnClickListener {
+        stop.setOnClickListener {
             stopService(Intent(this, LiveAnalyzeService::class.java))
         }
     }
